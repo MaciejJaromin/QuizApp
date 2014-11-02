@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   resources :questions
 
-  resources :quizzes
+  resources :quizzes do
+    member do
+      put 'add_question'
+    end
+  end
 
   resources :categories
 

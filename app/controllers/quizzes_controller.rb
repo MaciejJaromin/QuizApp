@@ -1,5 +1,5 @@
 class QuizzesController < ApplicationController
-  before_action :set_quiz, only: [:show, :edit, :update, :destroy]
+  before_action :set_quiz, only: [:show, :edit, :update, :destroy, :add_question]
   before_action :pass_categories, only: [:new, :edit, :create, :update]
 
   # GET /quizzes
@@ -59,6 +59,16 @@ class QuizzesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to quizzes_url, notice: 'Quiz was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def add_question
+    new_question = Question.new()
+    new_question.quiz_id = @quiz.id
+    new_question.save
+    respond_to do |format|
+      format.html { redirect_to edit_quiz_path(@quiz), notice: 'Question was successfully added.' }
+      format.json { render :show, status: :ok, location: @quiz }
     end
   end
 
