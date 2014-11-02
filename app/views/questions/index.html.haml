@@ -1,0 +1,29 @@
+%h1 Listing questions
+
+%table
+  %tr
+    %th Content
+    %th Right answer
+    %th Wrong answer1
+    %th Wrong answer2
+    %th Wrong answer3
+    %th Quiz
+    %th
+    %th
+    %th
+
+  - @questions.each do |question|
+    %tr
+      %td= question.content
+      %td= question.right_answer
+      %td= question.wrong_answer1
+      %td= question.wrong_answer2
+      %td= question.wrong_answer3
+      %td= question.quiz
+      %td= link_to 'Show', question
+      %td= link_to 'Edit', edit_question_path(question)
+      %td= link_to 'Destroy', question, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Question', new_question_path

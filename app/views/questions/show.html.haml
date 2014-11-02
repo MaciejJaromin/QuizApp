@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Content:
+  = @question.content
+%p
+  %b Right answer:
+  = @question.right_answer
+%p
+  %b Wrong answer1:
+  = @question.wrong_answer1
+%p
+  %b Wrong answer2:
+  = @question.wrong_answer2
+%p
+  %b Wrong answer3:
+  = @question.wrong_answer3
+%p
+  %b Quiz:
+  = @question.quiz
+
+= link_to 'Edit', edit_question_path(@question)
+\|
+= link_to 'Back', questions_path
