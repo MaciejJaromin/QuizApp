@@ -1,6 +1,6 @@
 class QuizzesController < ApplicationController
   before_action :set_quiz, only: [:show, :edit, :update, :destroy]
-  before_action :pass_categories, only [:new, :edit, :create, :update]
+  before_action :pass_categories, only: [:new, :edit, :create, :update]
 
   # GET /quizzes
   # GET /quizzes.json
