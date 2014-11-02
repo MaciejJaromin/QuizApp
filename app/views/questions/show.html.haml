@@ -17,7 +17,7 @@
   = @question.wrong_answer3
 %p
   %b Quiz:
-  = link_to question.quiz.name, question.quiz
+  = link_to @question.quiz.name, @question.quiz
 
 = link_to 'Edit', edit_question_path(@question)
 \|
