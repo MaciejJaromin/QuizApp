@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :quizzes do
     member do
-      get 'add_question'
+      post 'add_question'
     end
   end
 

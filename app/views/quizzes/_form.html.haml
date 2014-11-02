@@ -38,7 +38,8 @@
         = question_form.label :_destroy
         = question_form.check_box :_destroy
 
+  .actions
+    = link_to 'Add A New Question', add_question_quiz_path(@quiz), method: :post
 
   .actions
-    = link_to 'Add Question', add_question_quiz_path(@quiz)
     = f.submit 'Save'

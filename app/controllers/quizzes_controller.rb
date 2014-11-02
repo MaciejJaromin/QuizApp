@@ -67,7 +67,7 @@ class QuizzesController < ApplicationController
     new_question.quiz_id = @quiz.id
     new_question.save
     respond_to do |format|
-      format.html { redirect_to edit_quiz_path(@quiz), notice: 'Question was successfully added.' }
+      format.html { redirect_to edit_quiz_path(@quiz)}
       format.json { render :show, status: :ok, location: @quiz }
     end
   end
