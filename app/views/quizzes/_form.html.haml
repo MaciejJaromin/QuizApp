@@ -15,5 +15,20 @@
   .field
     = f.label :category
     = f.collection_select :category_id, @categories, :id, :name
+
+  %h2 Questions
+  f.fields_for :tags do |tag_form|
+    = tag_form.label :content
+    = tag_form.text_field :content
+    = tag_form.label :right_answer
+    = tag_form.text_field :right_answer
+    = tag_form.label :wrong_answer1
+    = tag_form.text_field :wrong_answer1
+    = tag_form.label :wrong_answer2
+    = tag_form.text_field :wrong_answer2
+    = tag_form.label :wrong_answer3
+    = tag_form.text_field :wrong_answer3
+
+
   .actions
     = f.submit 'Save'
