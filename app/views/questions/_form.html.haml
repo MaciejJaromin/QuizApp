@@ -23,6 +23,6 @@
     = f.text_field :wrong_answer3
   .field
     = f.label :quiz
-    = f.text_field :quiz
+    = f.collection_select :quiz_id, @quizzes, :id, :name
   .actions
     = f.submit 'Save'

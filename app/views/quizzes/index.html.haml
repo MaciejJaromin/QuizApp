@@ -13,7 +13,7 @@
     %tr
       %td= quiz.name
       %td= quiz.description
-      %td= quiz.category
+      %td= link_to quiz.category.name, quiz.category
       %td= link_to 'Show', quiz
       %td= link_to 'Edit', edit_quiz_path(quiz)
       %td= link_to 'Destroy', quiz, :method => :delete, :data => { :confirm => 'Are you sure?' }

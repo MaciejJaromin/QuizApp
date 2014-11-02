@@ -8,7 +8,7 @@
   = @quiz.description
 %p
   %b Category:
-  = @quiz.category
+  = link_to @quiz.category.name, @quiz.category
 
 = link_to 'Edit', edit_quiz_path(@quiz)
 \|
