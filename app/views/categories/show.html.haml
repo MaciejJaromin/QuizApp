@@ -4,6 +4,24 @@
   %b Name:
   = @category.name
 
+%h1 Listing quizzes
+
+%table
+  %tr
+    %th Name
+    %th Description
+    %th
+    %th
+    %th
+
+  - @category.quizzes.each do |quiz|
+    %tr
+      %td= quiz.name
+      %td= quiz.description
+      %td= link_to 'Show', quiz
+      %td= link_to 'Edit', edit_quiz_path(quiz)
+      %td= link_to 'Destroy', quiz, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
 = link_to 'Edit', edit_category_path(@category)
 \|
 = link_to 'Back', categories_path
